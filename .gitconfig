@@ -1,0 +1,21 @@
+# Local/private config goes in the include
+[core]
+  editor = /usr/bin/vim
+  excludesfile = ~/.gitignore_global
+  autocrlf = false
+  filemode = false
+  safecrlf = false
+[credential]
+  helper = store
+[fetch]
+  prune = true
+[help]
+  autocorrect = 1
+[include]
+  path = ~/.gitconfig.local
+[merge]
+  # introduces the original text before each side's changes
+  conflictstyle = diff3
+[push]
+  default = simple
+
