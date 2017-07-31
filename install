@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+DOTFILES_DIR=$(pwd)
+
+for file in $(find . -type f -name "\.*"); do
+  ln -sfv "$DOTFILES_DIR/${file}" ~
+done
