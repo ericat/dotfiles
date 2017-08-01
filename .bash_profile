@@ -18,12 +18,9 @@ alias ls='ls -G'
 alias ltree='tree -L 1'
 
 export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 export PATH=${PATH}:${ANDROID_HOME}/tools
-export PATH="$PATH:/opt/yarn-[version]/bin"
 export PATH=$HOME/.node_modules/bin:$PATH
-export PATH="$PATH:`yarn global bin`"
 
 if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
   export TERM=gnome-256color
@@ -81,3 +78,4 @@ export PS2="\[$ORANGE\]→ \[$RESET\]"
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

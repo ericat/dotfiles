@@ -23,6 +23,7 @@ Plugin 'OrangeT/vim-csharp'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'fatih/vim-go'
+Plugin 'prettier/vim-prettier'
 
 call vundle#end()            " required for Vundle
 filetype plugin indent on    " required for Vundle
@@ -36,7 +37,7 @@ imap jk <ESC>
 let mapleader=" "
 let g:ackprg = 'ag --vimgrep'
 let g:NERDTreeWinPos = "left"
-let NERDTreeShowHidden=0
+let NERDTreeShowHidden=1
 
 " filenames like *.xml, *.html, *.xhtml, ...
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml"
