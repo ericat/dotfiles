@@ -1,12 +1,11 @@
 # Git
 alias g="git status"
 alias gc="git commit"
-alias gp='git push 2>&1 | $(grep "\--set-upstream" | tr -s " ")'
+alias gp='git push 2>&1 | [ $(grep "\--set-upstream" | tr -s " ") ] || echo "Use the force, cat!"'
 alias gpf="git push -f"
 alias gl='git log --pretty=format:"[%h] %ae, %ar: %s" --stat'
 alias gg='git log --pretty=oneline'
 alias tempo='git log --all --oneline --decorate --author="Erica" --since="1.week" --pretty=format:"%h%x09%an%x09%ad%x09%s"'
-
 alias bashp='vi ~/.bash_profile'
 alias vi='vim'
 alias vimrc='vi ~/.vimrc'
