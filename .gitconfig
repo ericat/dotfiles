@@ -14,8 +14,7 @@
 [include]
   path = ~/.gitconfig.local
 [merge]
-  # introduces the original text before each side's changes
   conflictstyle = diff3
 [push]
-  default = simple
+	default = current
 

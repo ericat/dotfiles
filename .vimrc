@@ -24,7 +24,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'fatih/vim-go'
 Plugin 'prettier/vim-prettier'
-Plugin 'fleischie/vim-styled-components'
 
 call vundle#end()            " required for Vundle
 filetype plugin indent on    " required for Vundle
@@ -33,13 +32,14 @@ syntax enable
 syntax on
 set encoding=utf-8
 colorscheme molokai
+let g:molokai_original = 1
 
 imap jk <ESC>
 let mapleader=" "
 let g:ackprg = 'ag --vimgrep'
 let g:NERDTreeWinPos = "left"
-let NERDTreeShowHidden=1
-
+let NERDTreeShowHidden = 1
+let g:NERDSpaceDelims = 1
 " filenames like *.xml, *.html, *.xhtml, ...
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml"
 
