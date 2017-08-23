@@ -15,6 +15,9 @@
   path = ~/.gitconfig.local
 [merge]
   conflictstyle = diff3
+[diff]
+  algorithm = minimal
 [push]
-	default = current
-
+  default = current
+[pull]
+  rebase = true

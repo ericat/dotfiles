@@ -4,6 +4,7 @@
 /.vs/
 /packages/
 /test/
+/flow-typed
 /node_modules/
 *.config
 *.eslintrc
