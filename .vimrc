@@ -25,19 +25,15 @@ Plugin 'tpope/vim-surround'
 call vundle#end()            " required for Vundle
 filetype plugin indent on    " required for Vundle
 
+" Custom
 syntax enable
 syntax on
 set encoding=utf-8
 colorscheme molokai
 let g:molokai_original = 1
-
 imap jk <ESC>
 let mapleader=" "
-" filenames like *.xml, *.html, *.xhtml, ...
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml"
-
-" Resize panes when vim is resized
-au VimResized * exe "normal! \<c-w>="
 
 set mouse=a                                                                       " enable mouse
 set path+=**/src/main/**,**                                                       " press gf within quotes in require('') to open that file
@@ -91,48 +87,47 @@ set fileformat=unix
 set wildmenu                                                                      " autosuggest on tab"
 set wildmode=full
 
-autocmd BufWritePre *.js :%s/\s\+$//e "Remove trailing whitespace on save
-autocmd BufNewFile,BufRead *.pcss set syntax=css
-
-" Comfort commands
+" comfort commands
 command! -bar -bang Q quit<bang>
 command! W w
 command! WQ wq
 command! Wq wq
 command! Q q
 
-" Insert blank line above/below
+" Theme, style, formatting, UI
+autocmd BufWritePre *.js :%s/\s\+$//e "Remove trailing whitespace on save
+autocmd BufNewFile,BufRead *.pcss set syntax=css
+augroup CursorLine " cursorLine function highlights line in active pane
+  au!
+  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  au WinLeave * setlocal nocursorline
+augroup END
+" resize panes when vim is resized
+au VimResized * exe "normal! \<c-w>="
+" insert blank line above/below
 nmap T O<ESC>j
 nmap t o<ESC>k
+" clear last search highlighting
+map <Space> :noh<cr>
+" highlight the current line
+hi CursorLine cterm=NONE ctermbg=241
 
-" Ctrlp config
+" " Plugins
+" ctrlp
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\.git$\|public$|log\|tmp\|target$\|coverage\|node_modules$',
     \ 'file': '\.so$\|\.dat$|\.DS_Store$|\.log$|\.tar.gz$|.zip$|.swp$|\.lock$'
     \ }
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 
-" Silver searcher config
+" silver searcher
 let g:ackprg = 'ag --vimgrep'
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor " Use Ag over Grep
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
-" Clear last search highlighting
-map <Space> :noh<cr>
-
-" Highlight the current line
-hi CursorLine cterm=NONE ctermbg=241
-
-" Theme and style settings
-augroup CursorLine " CursorLine function highlights line in active pane
-  au!
-  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-  au WinLeave * setlocal nocursorline
-augroup END
-
-" NERDTree config
+" nerdtree
 let g:NERDTreeHijackNetrw=0 " Prohibit NERDTree from spawning new panes
 let g:NERDTreeWinPos = "left"
 let NERDTreeShowHidden = 1
@@ -140,7 +135,7 @@ let g:NERDSpaceDelims = 1
 nnoremap <C-t> :NERDTreeToggle<CR>
 vnoremap . :norm.<CR>
 
-" iTerm config
+" iterm
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
