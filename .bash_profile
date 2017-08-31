@@ -2,8 +2,8 @@
 alias g="git status"
 alias gc="git commit"
 alias gp='git push'
-alias gpu='git push -u'
-alias gpf='git push --force-with-lease'
+alias gpf='git push --force'
+alias leeroy="git commit --amend --no-edit --no-verify"
 alias gl='git log --pretty=format:"[%h] %ae, %ar: %s" --stat'
 alias gg='git log --pretty=oneline'
 alias tempo='git log --all --oneline --decorate --author="Erica" --since="1.week" --pretty=format:"%h%x09%an%x09%ad%x09%s"'
@@ -17,6 +17,7 @@ alias sourceb='source  ~/.bash_profile'
 alias today='cal | grep -E --color "\b`date +%e`\b|$"'
 alias ls='ls -G'
 alias ltree='tree -L 1'
+alias tf='terraform'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm

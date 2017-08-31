@@ -21,6 +21,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
+Plugin 'hashivim/vim-terraform'
 
 call vundle#end()            " required for Vundle
 filetype plugin indent on    " required for Vundle
@@ -37,22 +38,23 @@ let g:closetag_filenames = "*.html,*.xhtml,*.phtml"
 
 set mouse=a                                " enable mouse
 set path+=**/src/main/**,**                " press gf within quotes in require('') to open that file
-set suffixesadd+=.js
-set noswapfile
+set suffixesadd+=.js                       " files searched when gf (above)
+set noswapfile                             " disable swapfiles
 set nobackup                               " disable backups
 set ttyfast                                " set faster rendering
+set lazyredraw                             " redraw only when we need to.
 set list listchars=tab:\·\ ,trail:·        " mark whitespace with character
 set laststatus=2                           " always display statusline
-set fillchars+=stl:\ ,stlnc:\
+" statusline settings
 set statusline+=%F                         " add path to statusline
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-set clipboard=unnamed
+set clipboard=unnamed                      " access clipboard
 set t_ut=                                  " disable deleted colouring
 set t_Co=256                               " force 256 colour mode
 set t_vb=                                  " turn off bell
-au FileType gitcommit set tw=72            " wrapping long commit messages
+au FileType gitcommit set tw=72            " wrap long commit messages
 set nowrap                                 " no wrapping for lines longer than window
 set shiftwidth=2                           " smarttab values
 set shiftround                             " round indent to multiple of shiftwidth
@@ -63,17 +65,16 @@ set expandtab                              " use <space>s rather than <tab>
 set autoindent                             " use current line indentation when copying
 set scrolloff=3                            " minimum lines before/after curso
 set linebreak                              " don't split on words
-set hidden                                 " dont complain about buffers
+set hidden                                 " don't complain about buffers
 set number                                 " show line number
 set ruler                                  " show ruler
 set splitbelow                             " set vertical splits to below
 set splitright                             " set horizontal splits to the right
 set backspace=indent,eol,start             " backspace was not working anymore
 set cursorline                             " highlight line
-set autoread                               " reload files if they have changed
-set ttyfast                                " set faster rendering
 set gdefault                               " perform global substitutions by default
-set autowrite
+set autoread                               " reload files if they have changed
+set autowrite                              " autosave when focus is lost
 set autowriteall
 set infercase                              " smarter completions"
 set showmatch                              " show matching brace briefly
