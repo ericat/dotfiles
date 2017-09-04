@@ -148,3 +148,8 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 vnoremap <C-c> "*y
+
+" Send delete to the black hole register
+" To keep the original behaviour: nnoremap <leader>d "_d
+nnoremap d "_d
+
