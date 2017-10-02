@@ -34,6 +34,7 @@ let g:molokai_original = 1
 imap jk <ESC>
 let mapleader=" "
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml"
+let g:jsx_ext_required = 0
 
 set mouse=a                                " enable mouse
 set path+=**/src/main/**,**                " press gf within quotes in require('') to open that file
