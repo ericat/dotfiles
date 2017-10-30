@@ -142,11 +142,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 vnoremap <C-c> "*y
+
+" Other mappings
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 " Disable annoying Type x to go to visual mode
 nnoremap  Q <Nop>
-
-" Send delete to the black hole register
-" To keep the original behaviour: nnoremap <leader>d "_d
-nnoremap d "_d
