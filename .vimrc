@@ -25,6 +25,9 @@ Plugin 'hashivim/vim-terraform'
 call vundle#end()            " required for Vundle
 filetype plugin indent on    " required for Vundle
 
+" Fix common misspellings
+source ~/.vim/.abbreviations.vim
+
 " Custom
 syntax enable
 syntax on
