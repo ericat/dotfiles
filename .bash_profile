@@ -23,6 +23,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=$HOME/.node_modules/bin:$PATH
+export KUBECONFIG=$PWD/provisioning/etc/kubernetes/kubeconfig
 
 if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
   export TERM=gnome-256color
