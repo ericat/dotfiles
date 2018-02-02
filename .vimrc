@@ -57,6 +57,8 @@ set clipboard=unnamed                      " access clipboard
 set t_ut=                                  " disable deleted colouring
 set t_Co=256                               " force 256 colour mode
 set t_vb=                                  " turn off bell
+set confirm                                " display dialog when closing an unsaved file
+set noerrorbells                           " mute when erroring
 au FileType gitcommit set tw=72            " wrap long commit messages
 set nowrap                                 " no wrapping for lines longer than window
 set shiftwidth=2                           " smarttab values
