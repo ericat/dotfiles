@@ -78,10 +78,8 @@ set splitright                             " set horizontal splits to the right
 set backspace=indent,eol,start             " backspace was not working anymore
 set cursorline                             " highlight line
 set gdefault                               " perform global substitutions by default
-set autoread                               " reload files if they have changed
-set autowrite                              " autosave when focus is lost
-set autowriteall
 set infercase                              " smarter completions"
+set shellcmdflag=-ic                       " load interactive shell
 set showmatch                              " show matching brace briefly
 set hlsearch                               " highlight all matches
 set incsearch                              " show pattern while typing
@@ -91,7 +89,10 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 set fileformat=unix
 set wildmenu                               " autosuggest on tab"
 set wildmode=full
-set wildignore+=node_modules/*,.*
+set wildignore+=node_modules/*
+set foldmethod=indent                      "enable code folding based on indent
+set nofoldenable                           " prevent vim from opening files already folded
+set foldnestmax=1                          " don't set too many folds
 
 " comfort commands
 command! -bar -bang Q quit<bang>
@@ -125,6 +126,9 @@ let g:ctrlp_custom_ignore = {
     \ 'file': '\.so$\|\.dat$|\.DS_Store$|\.log$|\.tar.gz$|.zip$|.swp$|\.lock$'
     \ }
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+let g:ctrlp_max_files=0
+let g:ctrlp_max_depth=40
+let g:ctrlp_working_path_mode = 0
 
 " silver searcher
 let g:ackprg = 'ag --vimgrep'
@@ -146,7 +150,14 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+" Enable copy / paste from outside
 vnoremap <C-c> "*y
+
+" Delete, not cut!
+vnoremap d "_d
+nnoremap d "_d
+vnoremap <C-x> d
+nnoremap <C-x> d
 
 " Other mappings
 nnoremap <C-Left> :tabprevious<CR>
